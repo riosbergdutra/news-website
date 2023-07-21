@@ -15,8 +15,7 @@ export class LoginComponent {
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
     this.formgroup = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.minLength(8)],
-      email: ['', [Validators.required, Validators.email]]
+      password: ['', Validators.required],
     });
   }
   onSubmit() {
@@ -26,7 +25,7 @@ export class LoginComponent {
       // Envia os dados para o json-server usando o HttpClient
       this.http.post('http://localhost:3000/formData', formData).subscribe(
         (response) => {
-          alert('Dados do formulário enviados com sucesso:');
+          console.log;('Dados do formulário enviados com sucesso:');
 
           // Após o envio bem-sucedido, navegue para a rota 'resultado' (ou qualquer outra rota desejada)
           this.router.navigate(['/página']);
@@ -36,7 +35,7 @@ export class LoginComponent {
         }
       );
     } else {
-      alert('Formulário inválido. Verifique os campos.');
+      console.log('Formulário inválido. Verifique os campos.');
     }
   }
 }
