@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CadastroService } from '../cadastro/cadastro.service'; // Importe o serviço CadastroService
 
 @Component({
   selector: 'app-login',
@@ -10,28 +11,38 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   formgroup: FormGroup;
-  name: string = ''
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    private cadastroService: CadastroService // Injete o serviço CadastroService
+  ) {
     this.formgroup = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
+
   onSubmit() {
     if (this.formgroup.valid) {
       const formData = this.formgroup.value;
+      const { email, password } = formData;
 
-      // Envia os dados para o json-server usando o HttpClient
-      this.http.post('http://localhost:3000/formData', formData).subscribe(
+      // Verifica se o cadastro existe usando o método verificarCadastro do serviço CadastroService
+      this.cadastroService.verificarCadastro(email, password).subscribe(
         (response) => {
-          console.log;('Dados do formulário enviados com sucesso:');
+          if (response.length > 0) {
+            console.log('Cadastro encontrado:', response);
 
-          // Após o envio bem-sucedido, navegue para a rota 'resultado' (ou qualquer outra rota desejada)
-          this.router.navigate(['/página']);
+            // Redireciona o usuário para outra página
+            this.router.navigate(['/home']);
+          } else {
+            console.log('Cadastro não encontrado. Verifique os dados informados.');
+          }
         },
         (error) => {
-          console.error('Erro ao enviar os dados do formulário:', error);
+          console.error('Erro ao verificar o cadastro:', error);
         }
       );
     } else {

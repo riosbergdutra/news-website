@@ -9,12 +9,17 @@ import { LoginComponent } from './login/login.component';
 import { appRoutingModule } from './app.routing-module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroService } from './cadastro/cadastro.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+    CadastroComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     appRoutingModule
   ],
-  providers: [],
+  providers: [CadastroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,20 +1,5 @@
-.conta-nova {
-  display: block;
-  width: 70%;
-  padding: 10px;
-  background-color: #2ab811;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin: 26px 12.5%;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 10px;
-  text-decoration: none;
-}
 
-
-.login {
+.cadastro {
   text-align: center;
 }
 
@@ -60,9 +45,8 @@ button:disabled {
   height: auto;
   box-sizing: border-box;
   position: absolute;
-  top: 18%;
+  top: 5%;
   left: 30%;
-
 }
 
 .welcome {
