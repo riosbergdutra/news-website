@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadastroService } from './cadastro/cadastro.service';
 import { HomeComponent } from './home/home.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     CadastroComponent,
     HomeComponent,
+    NewsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,39 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@200&display=swap');
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-family: 'Newsreader', serif;
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: larger;
   padding: 1px;
   background-color: #3450d9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.menu {
-  display: flex;
   align-items: center;
-  color: white;
+  display: flex; /* Flexbox para posicionar os elementos lado a lado */
+  justify-content: space-between; /* Coloca os elementos nas extremidades */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-left: 20px; /* Espaçamento no lado esquerdo */
 }
 
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  margin-right: 20px;
-  color: white;
-}
-
-.menu li:last-child {
-  margin-right: 0;
-}
-
+/* Estilos para o ícone do menu */
 .menu-icon {
   cursor: pointer;
   font-size: 24px;
+  margin-right: 35px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Estilos para a lista de opções do menu */
+.menu-list {
+  display: none;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 98px;
+  right: 3px;
+}
+
+.menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list li {
+  color: black;
+  padding: 8px;
+}
+
+/* Mostrar o menu quando a classe .show-menu estiver presente */
+.show-menu .menu-list {
+  display: block;
+}
+a{
+  text-decoration: none;
+  color: blue;
 }

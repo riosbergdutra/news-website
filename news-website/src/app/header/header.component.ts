@@ -10,4 +10,10 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-  }}
+  }
+  get menuStyles() {
+    return {
+      'display': this.isMenuOpen ? 'block' : 'none'
+    };
+  }
+}
