@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@200&display=swap');
+/* Estilos para o header */
 .header {
   font-family: 'Newsreader', serif;
   text-align: left;
@@ -8,13 +9,24 @@
   background-color: #3450d9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-items: center;
-  display: flex; /* Flexbox para posicionar os elementos lado a lado */
-  justify-content: space-between; /* Coloca os elementos nas extremidades */
-  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  position: absolute; /* Faz com que o header fique parado no topo do conteúdo */
   top: 0;
-  width: 100%;
-  padding-left: 20px; /* Espaçamento no lado esquerdo */
+  left: 0;
+  right: 0;
+  padding-left: 20px;
 }
+
+/* Estilos para telas menores */
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 0px;
+    text-align: center;
+  }
+}
+
 
 /* Estilos para o ícone do menu */
 .menu-icon {
@@ -46,7 +58,6 @@
   color: black;
   padding: 8px;
 }
-
 /* Mostrar o menu quando a classe .show-menu estiver presente */
 .show-menu .menu-list {
   display: block;

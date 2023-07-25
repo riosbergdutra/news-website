@@ -13,6 +13,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadastroService } from './cadastro/cadastro.service';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NewsComponent } from './news/news.component';
     CadastroComponent,
     HomeComponent,
     NewsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
